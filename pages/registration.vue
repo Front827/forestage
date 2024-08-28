@@ -23,6 +23,7 @@
   <NuxtLayout name="tabbar"> </NuxtLayout>
 </template>
 <script setup>
+import { Search } from "@element-plus/icons-vue";
 const onChoose = () => {
   navigateTo("/reg2", { replace: true });
 };
