@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout name="show"> </NuxtLayout>
-
+  <!-- 头像姓名账号 -->
   <div class="top-div">
     <div>
       <img
