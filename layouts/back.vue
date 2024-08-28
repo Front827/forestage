@@ -9,7 +9,7 @@
 
 <style scoped>
 .back-main {
-  height: 50px;
+  height: 40px;
   background-color: #07c160;
   display: flex;
   align-items: center;
@@ -25,7 +25,7 @@
 }
 
 .center {
-  font-size: 25px;
+  font-size: 20px;
   color: white;
   position: absolute;
   left: 50%;

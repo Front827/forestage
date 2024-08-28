@@ -1,94 +1,83 @@
 <template>
-  <div class="top-bar" style="margin-top: 15px">
-    <el-icon><ArrowLeft /></el-icon>
-    <span style="margin-left: 40%">眼科</span>
-  </div>
-  <div class="sec-bar">
-    <el-tabs
-      v-model="activeName"
-      type="card"
-      class="demo-tabs"
-      @tab-click="handleClick"
-    >
-      <el-tab-pane label="8/20" name="first">
-        <el-table :data="tableData" stripe style="width: 100%">
-          <el-table-column width="150px">
-            <template #default="scope">
-              <el-image :src="scope.row.imgUrl"></el-image>
-            </template>
-          </el-table-column>
-          <el-table-column prop="name" width="100" />
-          <el-table-column width="100px">
-            <template v-slot="scope">
-              <!-- 预约按钮 -->
-              <el-button
-                plain
-                @click="dialogVisible = true"
-                type="primary"
-                size="mini"
-                >预约</el-button
-              >
-            </template>
-          </el-table-column>
-        </el-table>
-      </el-tab-pane>
-      <el-tab-pane label="8/21" name="second">8/21</el-tab-pane>
-      <el-tab-pane label="8/22" name="third">8/22</el-tab-pane>
-      <el-tab-pane label="8/23" name="fourth">8/23</el-tab-pane>
-      <el-tab-pane label="8/24" name="fifth">8/24</el-tab-pane>
-      <el-tab-pane label="8/25" name="fifth">8/25</el-tab-pane>
-    </el-tabs>
-  </div>
-  <!-- 预约确认弹窗 -->
-  <el-dialog v-model="dialogVisible" title="提示" width="300">
-    <span>你确定要预约吗？</span>
-    <template #footer>
-      <div class="dialog-footer">
-        <el-button @click="dialogVisible = false">取消</el-button>
-        <el-button type="primary" @click="handleRegist" dialogVisible="false">
-          确定
-        </el-button>
+  <NuxtLayout name="back">预约挂号</NuxtLayout>
+  <div class="reg2-top-div">
+    <div>
+      <img
+        style="
+          width: 50px;
+          margin-left: 20px;
+
+          border-radius: 50%;
+        "
+        src="../assets/logo.jpg"
+        alt=""
+      />
+    </div>
+
+    <div>
+      <div>
+        <span style="font-size: 20px; font-weight: 700; margin-right: 20px"
+          >小明</span
+        >
+
+        <!-- 此处改为动态获取，title -->
+        <span>主任医师</span>
       </div>
-    </template>
-  </el-dialog>
-  <NuxtLayout name="tabbar"> </NuxtLayout>
+      <div>
+        <span>就诊科室:</span>
+        <!-- 此处改为动态获取，暂无 -->
+        <span>精神心理</span>
+      </div>
+    </div>
+  </div>
+  <div class="reg2-mid-div"></div>
+  <div class="reg2-bottom-div">
+    <div>信息填写</div>
+    <!-- 就诊时间 -->
+
+    <div>
+      <label>就诊人</label>
+      <input type="text" />
+    </div>
+    <div>
+      <label>身份证号</label>
+      <input type="text" />
+    </div>
+    <div>
+      <label>手机号</label>
+      <input type="text" />
+    </div>
+    <div>
+      <label for="meeting-time">就诊时间</label>
+
+      <input
+        type="datetime-local"
+        id="meeting-time"
+        name="meeting-time"
+        value="2024-8-28T19:30"
+        min="2024-01-01T00:00"
+        max="2034-01-01T00:00"
+      />
+    </div>
+    <div>
+      <textarea rows="10" cols="30">
+疾病描述
+</textarea
+      >
+    </div>
+    <el-button>确认提交</el-button>
+  </div>
 </template>
-
-<script lang="ts" setup>
-import { ref } from "vue";
-import type { TabsPaneContext } from "element-plus";
-import { ArrowLeft } from "@element-plus/icons-vue";
-const dialogVisible = ref(false);
-const handleRegist = () => {
-  alert("预约成功");
-};
-const activeName = ref("first");
-
-const handleClick = (tab: TabsPaneContext, event: Event) => {
-  console.log(tab, event);
-};
-
-const tableData = [
-  {
-    imgUrl: "../assets/logo.jpg",
-    name: "李世民",
-  },
-];
-</script>
-
-<style>
-.demo-tabs > .el-tabs__content {
-  padding: 32px;
-  color: #6b778c;
-  font-size: 32px;
-  font-weight: 600;
+<style scoped>
+.reg2-top-div {
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
 }
-.topbar {
-  width: 100%;
-  height: 30px;
-  text-align: center;
-}
-.sec-bar {
-  margin-top: 40px;
+.reg2-mid-div {
+  height: 5px;
+  background-color: antiquewhite;
 }
 </style>
