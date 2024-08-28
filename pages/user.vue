@@ -1,5 +1,20 @@
 <template>
   <NuxtLayout name="show"> </NuxtLayout>
+
+  <div class="top-div">
+    <div>
+      <img
+        style="width: 50px; border-radius: 50%"
+        src="../assets/logo.jpg"
+        alt=""
+      />
+    </div>
+
+    <div>
+      <span style="font-size: 20px">你好，小明</span><br /><span>12345678</span>
+    </div>
+  </div>
+  <div class="mid-div"></div>
   <!-- 个人信息模块（待做） -->
   <div class="user-message">
     <div class="l-img">
@@ -26,3 +41,26 @@
     </van-cell-group>
   </div>
 </template>
+<style scoped>
+.top-div {
+  height: 100px;
+}
+.mid-div {
+  height: 5px;
+  background-color: antiquewhite;
+}
+.top-div {
+  display: flex;
+  align-items: center; /* 垂直居中 */
+}
+
+.top-div > div {
+  flex: 1;
+  padding: 30px;
+}
+
+.top-div img {
+  width: 50px;
+}
+</style>
+<script></script>
